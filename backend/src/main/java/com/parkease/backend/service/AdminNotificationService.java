@@ -13,6 +13,6 @@ public class AdminNotificationService {
     }
 
     public long getUnreadCount() {
-        return repository.countByTargetRoleAndReadFalse("ADMIN");
+        return repository.countByTargetRoleAndIsReadFalse("ADMIN");
     }
 }

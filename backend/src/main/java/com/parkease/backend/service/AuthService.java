@@ -132,20 +132,20 @@ public class AuthService {
         /* =====================================================
            PROVIDER APPROVAL ENFORCEMENT
            ===================================================== */
-        if (user.getRole() == Role.PROVIDER) {
+        // if (user.getRole() == Role.PROVIDER) {
 
-            if (!user.isApproved()) {
-                throw new RuntimeException(
-                        "Your provider account is awaiting admin approval."
-                );
-            }
+        //     if (!user.isApproved()) {
+        //         throw new RuntimeException(
+        //                 "Your provider account is awaiting admin approval."
+        //         );
+        //     }
 
-            if (!user.isEnabled()) {
-                throw new RuntimeException(
-                        "Your provider account has been suspended by admin."
-                );
-            }
-        }
+        //     if (!user.isEnabled()) {
+        //         throw new RuntimeException(
+        //                 "Your provider account has been suspended by admin."
+        //         );
+        //     }
+        // }
 
         /* =====================================================
            ACCOUNT ENABLE CHECK

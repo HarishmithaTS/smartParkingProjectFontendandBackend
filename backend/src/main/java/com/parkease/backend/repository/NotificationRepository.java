@@ -7,8 +7,21 @@ import java.util.List;
 
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
 
-    // ✅ ROLE-BASED NOTIFICATIONS
+    /* ================= ADMIN ================= */
     List<Notification> findByTargetRoleOrderByCreatedAtDesc(String targetRole);
+    long countByTargetRoleAndIsReadFalse(String targetRole);
 
-    long countByTargetRoleAndReadFalse(String targetRole);
+    /* ================= PROVIDER ================= */
+    List<Notification> findByTargetUserIdOrderByCreatedAtDesc(Long targetUserId);
+   List<Notification> findByTargetRoleAndTargetUserIdOrderByCreatedAtDesc(
+        String targetRole,
+        Long targetUserId
+);
+
+long countByTargetRoleAndTargetUserIdAndIsReadFalse(
+        String targetRole,
+        Long targetUserId
+);
+
+    long countByTargetUserIdAndIsReadFalse(Long targetUserId);
 }
